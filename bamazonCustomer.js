@@ -20,54 +20,18 @@ var start = function() {
     inquirer.prompt({
         name: "purchaseYesOrNo",
         type: "rawlist",
-        message: "Would you like to purchase an an item?",
+        message: "Would you like to purchase an item?",
         choices: ["Yes", "No"]
     }).then(function(answer) {
         if (answer.purchaseYesOrNo.toUpperCase() == "POST") {
             purchaseRequest();
         } else {
-            purchaseRequest();
+            start();
         }
     })
 }
 
-// POST function
-var postAuction = function() {
-    inquirer.prompt([{
-        name: "item_name",
-        type: "input",
-        message: "\nWhat item would you like to post?"
-    }, {
-        name: "category",
-        type: "input",
-        message: "What category is your item?"
-    }, {
-        name: "starting_bid",
-        type: "input",
-        message: "What is the starting bid?",
-        validate: function(value) {
-                if (isNaN(value) == false) {
-                    return true;
-                } else {
-                    return false;
-                }
-            }
-            // pushes input to database
-    }]).then(function(answer) {
-        connection.query("INSERT INTO products SET ?", {
-                item_name: answer.item_name,
-                category: answer.category,
-                starting_bid: answer.starting_bid,
-                highest_bid: answer.highest_bid
-            },
-            function(err, res) {
-                console.log("\nYour auction was created successfully!\n");
-                start();
-            })
-    })
-}
-
-// BID function
+// Purchase function
 var purchaseRequest = function() {
     connection.query("SELECT * FROM products", function(err, res) {
         // console.log(res);
@@ -91,19 +55,14 @@ var purchaseRequest = function() {
                                 } else {
                                     return false;
                                 }
-                            }
-                            // checks if answer is lower than starting bid
+                            },
                     }).then(function(answer) {
-                        if (res.stock_quantity < parseInt(answer.quantityRequest)) {
-                            connection.query("UPDATE products SET ? WHERE ?", [{
-                                stock_quantity: answer.quantityRequest
-                            }, {
-                                id: chosenItem.id
-                            }], function(err, res) {
-                                console.log("Your order was successfully placed!\n");
-                                start();
-                            });
+                        if (chosenItem.stock_quantity > parseInt(answer.quantityRequest)) {
+                          console.log("We have enough!" + chosenItem.stock_quantity + "\n");
+                          connection.query("UPDATE products SET stock_quantity = stock_quantity - " + answer.quantityRequest + " WHERE item_id = " + chosenItem.item_id);
+                          start();
                         } else {
+                            console.log(chosenItem.stock_quantity);
                             console.log("\nUnfortunately we do not have enough stock available to fulfill. Please try another order quantity...");
                             start();
                         }

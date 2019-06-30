@@ -1,7 +1,7 @@
 USE bamazon;
 
 INSERT INTO products
-VALUES (00001, "Galaxy S9", "Cell Phones", 300, 4958);
+VALUES (00001, "Galaxy S9", "Cell Phones", 300, 5098);
 
 INSERT INTO products
 VALUES (00002, "Galaxy S10", "Cell Phones", 795, 8302);
