@@ -60,6 +60,7 @@ var purchaseRequest = function() {
                         if (chosenItem.stock_quantity > parseInt(answer.quantityRequest)) {
                           console.log("We have enough!" + chosenItem.stock_quantity + "\n");
                           connection.query("UPDATE products SET stock_quantity = stock_quantity - " + answer.quantityRequest + " WHERE item_id = " + chosenItem.item_id);
+                          // INSERT TOTAL COST HERE!!! STILL REQUIRED!
                           start();
                         } else {
                             console.log(chosenItem.stock_quantity);
