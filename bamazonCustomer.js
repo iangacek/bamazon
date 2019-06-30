@@ -15,7 +15,7 @@ connection.connect(function (err) {
   start();
 });
 
-// inquirer starting prompt
+// Inquirer prompt
 var start = function () {
   inquirer.prompt({
     name: "purchaseYesOrNo",
@@ -35,13 +35,11 @@ var start = function () {
 // Purchase function
 var purchaseRequest = function () {
   connection.query("SELECT * FROM products", function (err, res) {
-    // console.log(res);
     inquirer.prompt({
       name: "choice",
       type: "rawlist",
-      // forloop displays posted items as array-objects
+      // This loop displays objects in an array
       choices: function (value) { var choiceArray = []; for (var i = 0; i < res.length; i++) { choiceArray.push(res[i].product_name); } return choiceArray; }, message: "What item would you like to purchase?"
-      // calls posted items,
     }).then(function (answer) {
       for (var i = 0; i < res.length; i++) {
         if (res[i].product_name == answer.choice) {
