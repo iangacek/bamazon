@@ -55,37 +55,36 @@ var viewLowInventory = function () {
 
 var addInventory = function () {
     connection.query("SELECT * FROM products", function (err, res) {
-      inquirer.prompt({
-        name: "choice",
-        type: "rawlist",
-        // This loop displays objects in an array
-        choices: function (value) { var choiceArray = []; for (var i = 0; i < res.length; i++) { choiceArray.push(res[i].product_name); } return choiceArray; }, message: "What item would you like to add stock to?"
-      }).then(function (answer) {
-        for (var i = 0; i < res.length; i++) {
-          if (res[i].product_name == answer.choice) {
-            var chosenItem = res[i];
-            inquirer.prompt({
-              name: "addQuantity",
-              type: "input",
-              message: "How much stock would you like to add?",
-              validate: function (value) {
-                if (isNaN(value) == false) {
-                  return true;
-                } else {
-                  return false;
+        inquirer.prompt({
+            name: "choice",
+            type: "rawlist",
+            // This loop displays objects in an array
+            choices: function (value) { var choiceArray = []; for (var i = 0; i < res.length; i++) { choiceArray.push(res[i].product_name); } return choiceArray; }, message: "What item would you like to add stock to?"
+        }).then(function (answer) {
+            for (var i = 0; i < res.length; i++) {
+                if (res[i].product_name == answer.choice) {
+                    var chosenItem = res[i];
+                    inquirer.prompt({
+                        name: "addQuantity",
+                        type: "input",
+                        message: "How much stock would you like to add?",
+                        validate: function (value) {
+                            if (isNaN(value) == false) {
+                                return true;
+                            } else {
+                                return false;
+                            }
+                        },
+                    }).then(function (answer) {
+                        connection.query("UPDATE products SET stock_quantity = stock_quantity + " + answer.addQuantity + " WHERE item_id = " + chosenItem.item_id);
+                        // INSERT LINE TO ADD UPDATED QUANTITY HERE
+                        start();
+                    })
                 }
-              },
-            }).then(function (answer) {
-                connection.query("UPDATE products SET stock_quantity = stock_quantity + " + answer.addQuantity + " WHERE item_id = " + chosenItem.item_id);
-                // INSERT LINE TO ADD UPDATED QUANTITY HERE
-                start();
-            })
-          }
-        }
-      })
+            }
+        })
     })
-  }
-
+}
 
 // Not functioning at this time
 var addNewProduct = function () {
