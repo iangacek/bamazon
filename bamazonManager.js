@@ -25,11 +25,14 @@ var start = function () {
     }).then(function (answer) {
         if (answer.managerOption == "View Products for Sale") {
             productsForSale();
+        } else if (answer.managerOption == "View Low Inventory") {
+            viewLowInventory();
+        } else if (answer.managerOption == "Add to Inventory") {
+            addInventory();
         } else {
-            (answer.managerOption == "View Low Inventory")
-            productsForSale()
-        }
-    });
+            addNewProduct();
+        };
+    })
 }
 
 var productsForSale = function () {
@@ -72,3 +75,30 @@ var productsForSale = function () {
         })
     })
 }
+
+var viewLowInventory = function () {
+    connection.query("SELECT * FROM products WHERE stock_quantity <= 50", function (err, res) {
+        for (var i = 0; i < res.length; i++) {
+            console.log(res);
+        }
+        start();
+    })
+};
+
+var addInventory = function () {
+    connection.query("SELECT * FROM products WHERE stock_quantity <= 50", function (err, res) {
+        for (var i = 0; i < res.length; i++) {
+            console.log(res);
+        }
+        start();
+    })
+};
+
+var addNewProduct = function () {
+    connection.query("SELECT * FROM products WHERE stock_quantity <= 50", function (err, res) {
+        for (var i = 0; i < res.length; i++) {
+            console.log(res);
+        }
+        start();
+    })
+};
