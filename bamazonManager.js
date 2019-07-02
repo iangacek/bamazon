@@ -86,6 +86,8 @@ var addInventory = function () {
     })
   }
 
+
+// Not functioning at this time
 var addNewProduct = function () {
     connection.query("SELECT * FROM products WHERE stock_quantity <= 50", function (err, res) {
         for (var i = 0; i < res.length; i++) {
