@@ -60,7 +60,7 @@ var purchaseRequest = function () {
               console.log("\nWe have enough! Current stock: " + chosenItem.stock_quantity + "\n");
               connection.query("UPDATE products SET stock_quantity = stock_quantity - " + answer.quantityRequest + " WHERE item_id = " + chosenItem.item_id);
               var total = chosenItem.price * answer.quantityRequest
-              console.log("Your total cost is: " + total + "\n");
+              console.log("Your total cost is: $" + total + "\n");
               start();
             } else {
               console.log(chosenItem.stock_quantity);
