@@ -82,13 +82,13 @@ In our example, we added 1500 items to the Galaxy S10 product. Using our stock l
 ## Technologies included in this application: 
 
 `mySQL`:
-`[sql](https://www.npmjs.com/package/mysql)
+[sql](https://www.npmjs.com/package/mysql)
 
 `inquirer`:
-`[inquirer](https://www.npmjs.com/package/inquirer)
+[inquirer](https://www.npmjs.com/package/inquirer)
 
 `mySQL Workbench`:
-`[sqlWB](https://www.mysql.com/products/workbench/)
+[mySQL Workbench](https://www.mysql.com/products/workbench/)
 
 ## Credits
 
