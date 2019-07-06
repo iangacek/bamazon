@@ -35,45 +35,45 @@ to start the server. If the database in mySQL is properly loaded, the node serve
 
 Initial screen after loading `bamazonCustomer.js` file via `node bamazonCustomer.js`:
 
-![bamazonCustomer Example 0](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonCustomer0.png)
+![bamazonCustomer Example 0](/assets/screenshots/bamazonCustomer0.png)
 
 Next screen which displays a list of items available for purchase from the bamazon database:
 
-![bamazonCustomer Example 1](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonCustomer1.png)
+![bamazonCustomer Example 1](/assets/screenshots/bamazonCustomer1.png)
 
 After selecting which product you would like to purchase, you can put in a request for your purchase quantity. If there is enough stock of an item, the purchase will be successful and you will be presented with a total cost. The program will also display the intial quantity of stock before purchase.
 
-![bamazonCustomer Example 2](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonCustomer2.png)
+![bamazonCustomer Example 2](/assets/screenshots/bamazonCustomer2.png)
 
 We can see the mySQL database was updated. The quantity in stock lowered from 7157 to 6157.
 
-![bamazonCustomer Example 3](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonCustomer3.png)
+![bamazonCustomer Example 3](/assets/screenshots/bamazonCustomer3.png)
 
 However if the order fails due to a request that exceeds current stock levels, you will receive an error:
 
-![bamazonCustomer Example 4](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonCustomer4.png?)
+![bamazonCustomer Example 4](/assets/screenshots/bamazonCustomer4.png)
 
 ###### bamazonManager.js examples
 
 Initial screen after loading `bamazonManager` file via `node bamazonManager.js`:
 
-![bamazonManager Example 0_0](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonManager0_0.png)
+![bamazonManager Example 0_0](/assets/screenshots/bamazonManager0_0.png)
 
 Selecting option 1 will provide you with a list of all items in the bamazon product database in a JSON format:
 
-![bamazonManager Example 1_0](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonManager1_0.png)
+![bamazonManager Example 1_0](/assets/screenshots/bamazonManager1_0.png)
 
 Selecting option 2 will you provide you with a list of items in the bamazon product database that have fewer than 50 items in stock in a JSON format:
 
-![bamazonManager Example 2_0](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonManager2_0.png)
+![bamazonManager Example 2_0](/assets/screenshots/bamazonManager2_0.png)
 
 Selecting option 3 will provide you the ability to add stock to a certain item. After selecting option 3, a list of items available will then be presented:
 
-![bamazonManager Example 3_0](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonManager3_0.png)
+![bamazonManager Example 3_0](/assets/screenshots/bamazonManager3_0.png)
 
 Next we will be asked how much stock we would like to add:
 
-![bamazonManager Example 3_1](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonManager3_1.png)
+![bamazonManager Example 3_1](/assets/screenshots/bamazonManager3_1.png)
 
 In our example, we added 1500 items to the Galaxy S10 product. Using our stock level of 6157 in our `bamazonCustomer.js` example, we can now see our inventory level of that product is 7657.
 
