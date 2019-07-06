@@ -77,7 +77,7 @@ Next we will be asked how much stock we would like to add:
 
 In our example, we added 1500 items to the Galaxy S10 product. Using our stock level of 6157 in our `bamazonCustomer.js` example, we can now see our inventory level of that product is 7657.
 
-![bamazonManager Example 3_2](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonManager3_2.png)
+![bamazonManager Example 3_2](/assets/screenshots/bamazonManager3_2.png)
 
 ## Technologies included in this application: 
 
