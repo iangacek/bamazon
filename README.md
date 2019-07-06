@@ -31,17 +31,23 @@ to start the server. If the database in mySQL is properly loaded, the node serve
 
 ## Screenshots
 
-Spotify example:
+###### bamazonCustomer.js examples
 
-![Spotify example](https://github.com/iangacek/liri-node-app/blob/master/assets/screenshots/Spotify-example.PNG)
+Initial screen after loading `bamazonCustomer.js` file via `node bamazonCustomer.js`:
 
-OMDB example:
+![bamazonCustomer Example 0](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonCustomer0.png)
 
-![OMDB example](https://github.com/iangacek/liri-node-app/blob/master/assets/screenshots/OMDB-example.PNG)
+Next screen which displays a list of items available for purchase from the bamazon database:
 
-BandsInTown example:
+![bamazonCustomer Example 1](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonCustomer1.png)
 
-![BandsInTown example](https://github.com/iangacek/liri-node-app/blob/master/assets/screenshots/BandsInTown-example.PNG)
+After selecting which product you would like to purchase, you can put in a request for your purchase quantity. If there is enough stock of an item, the purchase will be successful and you will be presented with a total cost. The program will also display the intial quantity of stock before purchase.
+
+![bamazonCustomer Example 2](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonCustomer2.png)
+
+We can see the mySQL database was updated. The quantity in stock lowered from 7157 to 6157.
+
+![bamazonCustomer Example 3](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonCustomer3.png)
 
 ## Technologies included in this application: 
 

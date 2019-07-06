@@ -63,8 +63,7 @@ var purchaseRequest = function () {
               console.log("Your total cost is: $" + total + "\n");
               start();
             } else {
-              console.log(chosenItem.stock_quantity);
-              console.log("\nUnfortunately we do not have enough stock available to fulfill. Please try another order quantity...");
+              console.log("\nUnfortunately we do not have enough stock available to fulfill. Please try another order quantity...\n");
               start();
             }
           })
