@@ -49,6 +49,14 @@ We can see the mySQL database was updated. The quantity in stock lowered from 71
 
 ![bamazonCustomer Example 3](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonCustomer3.png)
 
+However if the order fails due to a request that exceeds current stock levels, you will receive an error:
+
+![bamazonCustomer Example 4](https://github.com/iangacek/bamazon/blob/master/assets/screenshots/bamazonCustomer4.png?)
+
+###### bamazonManager.js examples
+
+Initial screen after loading `bamazonManager` file via `node bamazonManager.js`:
+
 ## Technologies included in this application: 
 
 `mySQL`:
