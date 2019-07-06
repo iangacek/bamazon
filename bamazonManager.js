@@ -21,7 +21,7 @@ var start = function () {
         name: "managerOption",
         type: "rawlist",
         message: "What would you like to do?",
-        choices: ["View Products for Sale", "View Low Inventory (Fewer Than 50)", "Add to Inventory", "Add New Product"]
+        choices: ["View Products for Sale", "View Low Inventory (Fewer Than 50)", "Add to Inventory"]
     }).then(function (answer) {
         if (answer.managerOption == "View Products for Sale") {
             productsForSale();
@@ -35,18 +35,14 @@ var start = function () {
 
 var productsForSale = function () {
     connection.query("SELECT * FROM products WHERE stock_quantity >= 1", function (err, res) {
-        for (var i = 0; i < res.length; i++) {
-            console.log(res);
-        }
+        console.log(res);
         start();
     })
 };
 
 var viewLowInventory = function () {
     connection.query("SELECT * FROM products WHERE stock_quantity <= 50", function (err, res) {
-        for (var i = 0; i < res.length; i++) {
-            console.log(res);
-        }
+        console.log(res);
         start();
     })
 };
