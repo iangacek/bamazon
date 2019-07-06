@@ -1,1 +1,59 @@
-# bamazon
+# bamazonCustomer and bamazonManager
+
+### Overview
+
+This bamazon application is a mySQL and node product database application designed for the UMN Coding Bootcamp's homework assignment by Ian Gacek. The node command line interface uses the "mySQL" and "inquirer" packages.
+
+### Organization
+
+This bamazon file primarily functions from the `bamazonCustomer.js` and `bamazonManager.js` files, with an inquirer flow asking what the user would like to do, then to what product, and finishes with an integer-based question.
+
+## Instructions
+
+To run `bamazonCustomer.js` or `bamazonManager.js`, open git bash and navigate to the folder containing either of the files respectively. Perform the follow command to install the proper node packages:
+
+`npm install`.
+
+If the function above does not work, run the following four commands:
+
+`npm install mysql`
+`npm install inquirer`
+
+Now, load mySQL Workbench and start a new server. In a new SQL tab, execute the command contained in the file `bamazon.sql`. After running that schema, run the command contained in the file `addProducts.sql` file to load the `products` table contained in the bamazon.sql database.
+
+After the database is properly loaded, back in terminal, run either commands:
+
+`node bamazonCustomer.js`
+-or-
+`node bamazonManager.js`
+
+to start the server. If the database in mySQL is properly loaded, the node server for bamazonCustomer.js and bamazonManager.js should work successfully.
+
+## Screenshots
+
+Spotify example:
+
+![Spotify example](https://github.com/iangacek/liri-node-app/blob/master/assets/screenshots/Spotify-example.PNG)
+
+OMDB example:
+
+![OMDB example](https://github.com/iangacek/liri-node-app/blob/master/assets/screenshots/OMDB-example.PNG)
+
+BandsInTown example:
+
+![BandsInTown example](https://github.com/iangacek/liri-node-app/blob/master/assets/screenshots/BandsInTown-example.PNG)
+
+## Technologies included in this application: 
+
+`mySQL`:
+`[sql](https://www.npmjs.com/package/mysql)
+
+`inquirer`:
+`[inquirer](https://www.npmjs.com/package/inquirer)
+
+`mySQL Workbench`:
+`[sqlWB](https://www.mysql.com/products/workbench/)
+
+## Credits
+
+Developed by Ian Gacek - 2019.
